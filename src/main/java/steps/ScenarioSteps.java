@@ -15,7 +15,11 @@ public class ScenarioSteps {
 
     @When("^выбран раздел \"(.+)\"$")
     public void selectSect(String nameElement) {
-        searchSteps.selectSect(nameElement);
+        try {
+            searchSteps.selectSect(nameElement);
+        }catch (Exception e){
+            new Exception();
+        }
     }
 
     @When("^выбрана категория \"(.+)\"$")
